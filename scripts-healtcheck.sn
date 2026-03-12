@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Simpler Test: Exit 0 nur wenn retry <= 5 und mtu >= 1300
+set -e
+retry=$(grep '^retry=' configs/vpn.conf | cut -d'=' -f2)
+mtu=$(grep '^mtu=' configs/vpn.conf | cut -d'=' -f2)
+if [ "$retry" -le 5 ] && [ "$mtu" -ge 1300 ]; then
+  echo "OK"
+  exit 0
+fi
+echo "FAIL"
+exit 1
