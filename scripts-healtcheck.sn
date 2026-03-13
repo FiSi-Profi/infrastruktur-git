@@ -9,3 +9,5 @@ if [ "$retry" -le 5 ] && [ "$mtu" -ge 1300 ]; then
 fi
 echo "FAIL"
 exit 1
+
+Guter Commit
